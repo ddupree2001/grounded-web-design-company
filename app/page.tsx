@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getImageUrls } from "@/lib/images";
+import ScrollReveal from "./ScrollReveal";
 
 const portfolioItems = [
   {
@@ -10,6 +11,7 @@ const portfolioItems = [
     tags: ["Branding", "Reservations", "Menu"],
     accent: "#c9a84c",
     bg: "linear-gradient(135deg, #1a1209 0%, #2a1e0a 100%)",
+    url: "https://restaurant-demo-sepia.vercel.app",
   },
   {
     name: "Nexus AI",
@@ -19,6 +21,7 @@ const portfolioItems = [
     tags: ["SaaS", "Pricing", "Analytics"],
     accent: "#6366f1",
     bg: "linear-gradient(135deg, #06060f 0%, #0f0f1e 100%)",
+    url: "https://startup-demo-beta.vercel.app",
   },
   {
     name: "Meridian Legal",
@@ -28,6 +31,7 @@ const portfolioItems = [
     tags: ["Law Firm", "Trust", "Leads"],
     accent: "#b8973a",
     bg: "linear-gradient(135deg, #0f1f3d 0%, #162847 100%)",
+    url: "https://lawfirm-demo-azure.vercel.app",
   },
 ];
 
@@ -295,6 +299,7 @@ export default function Home() {
 
       {/* Portfolio */}
       <section id="portfolio" className="py-28 px-6 max-w-7xl mx-auto">
+        <ScrollReveal>
         <div className="text-center mb-16">
           <p className="text-sm font-medium tracking-widest uppercase mb-3" style={{ color: "#818cf8" }}>
             Portfolio
@@ -306,12 +311,13 @@ export default function Home() {
             Three industries. Three completely different design languages. One standard: exceptional.
           </p>
         </div>
+        </ScrollReveal>
 
         <div className="grid lg:grid-cols-3 gap-6">
-          {portfolioItems.map((item) => (
+          {portfolioItems.map((item, i) => (
+            <ScrollReveal key={item.name} delay={i * 100}>
             <div
-              key={item.name}
-              className="rounded-2xl overflow-hidden card-hover group"
+              className="rounded-2xl overflow-hidden card-hover group h-full"
               style={{ border: "1px solid var(--border)", background: "var(--surface)" }}
             >
               <div
@@ -352,7 +358,9 @@ export default function Home() {
                   ))}
                 </div>
                 <a
-                  href="#"
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm font-medium transition-colors"
                   style={{ color: item.accent }}
                 >
@@ -360,6 +368,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
@@ -371,6 +380,7 @@ export default function Home() {
         style={{ borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}
       >
         <div className="max-w-6xl mx-auto">
+          <ScrollReveal>
           <div className="text-center mb-16">
             <p className="text-sm font-medium tracking-widest uppercase mb-3" style={{ color: "#818cf8" }}>
               Services & Pricing
@@ -383,12 +393,13 @@ export default function Home() {
               Every project is fixed-price. You know exactly what you are getting before we start.
             </p>
           </div>
+          </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {services.map((plan) => (
+            {services.map((plan, i) => (
+              <ScrollReveal key={plan.tier} delay={i * 100}>
               <div
-                key={plan.tier}
-                className="relative rounded-2xl p-8 card-hover flex flex-col"
+                className="relative rounded-2xl p-8 card-hover flex flex-col h-full"
                 style={{
                   border: plan.highlighted
                     ? "1px solid rgba(99,102,241,0.5)"
@@ -441,6 +452,7 @@ export default function Home() {
                   {plan.cta}
                 </a>
               </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -448,6 +460,7 @@ export default function Home() {
 
       {/* Process */}
       <section id="process" className="py-28 px-6 max-w-5xl mx-auto">
+        <ScrollReveal>
         <div className="text-center mb-16">
           <p className="text-sm font-medium tracking-widest uppercase mb-3" style={{ color: "#818cf8" }}>
             How It Works
@@ -457,11 +470,12 @@ export default function Home() {
             <br />not months.
           </h2>
         </div>
+        </ScrollReveal>
         <div className="grid md:grid-cols-2 gap-6">
-          {process.map((step) => (
+          {process.map((step, i) => (
+            <ScrollReveal key={step.step} delay={i * 100}>
             <div
-              key={step.step}
-              className="p-8 rounded-2xl card-hover"
+              className="p-8 rounded-2xl card-hover h-full"
               style={{ border: "1px solid var(--border)", background: "var(--surface)" }}
             >
               <p
@@ -478,12 +492,14 @@ export default function Home() {
               <h3 className="text-xl font-bold mb-2">{step.title}</h3>
               <p className="leading-relaxed" style={{ color: "var(--muted)" }}>{step.desc}</p>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
 
       {/* Quote break */}
       <section className="py-20 px-6" style={{ borderTop: "1px solid var(--border)" }}>
+        <ScrollReveal>
         <div className="max-w-3xl mx-auto text-center">
           <p
             className="font-bold leading-tight mb-6 tracking-tight"
@@ -499,26 +515,30 @@ export default function Home() {
             Most small businesses leave money on the table every day with a slow, forgettable website. We fix that.
           </p>
         </div>
+        </ScrollReveal>
       </section>
 
       {/* FAQ */}
       <section id="faq" className="py-28 px-6 max-w-3xl mx-auto">
+        <ScrollReveal>
         <div className="text-center mb-16">
           <p className="text-sm font-medium tracking-widest uppercase mb-3" style={{ color: "#818cf8" }}>FAQ</p>
           <h2 className="font-bold tracking-tight" style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)" }}>
             Common questions
           </h2>
         </div>
+        </ScrollReveal>
         <div className="space-y-4">
-          {faqs.map((faq) => (
+          {faqs.map((faq, i) => (
+            <ScrollReveal key={faq.q} delay={i * 80}>
             <div
-              key={faq.q}
               className="p-6 rounded-2xl"
               style={{ border: "1px solid var(--border)", background: "var(--surface)" }}
             >
               <h3 className="font-semibold mb-3">{faq.q}</h3>
               <p className="text-sm leading-relaxed" style={{ color: "var(--muted)" }}>{faq.a}</p>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
