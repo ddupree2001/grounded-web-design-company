@@ -40,7 +40,7 @@ const services = [
     tier: "Starter",
     price: "$1,500",
     cadence: "one-time",
-    tagline: "Get online fast. Look great immediately.",
+    tagline: "Everything a new business needs to look credible and get found online.",
     features: [
       "Up to 5 pages",
       "Mobile-first responsive design",
@@ -57,7 +57,7 @@ const services = [
     tier: "Professional",
     price: "$4,500",
     cadence: "one-time",
-    tagline: "A serious website for a serious business.",
+    tagline: "The complete package for a business ready to compete.",
     features: [
       "Up to 12 pages",
       "Custom UI / brand design system",
@@ -119,7 +119,7 @@ const process = [
 ];
 
 const stats = [
-  { value: "3", label: "Sites launched" },
+  { value: "100%", label: "On-time delivery" },
   { value: "< 3s", label: "Avg load time" },
   { value: "95+", label: "Lighthouse score" },
   { value: "100%", label: "Client satisfaction" },
@@ -132,7 +132,7 @@ const faqs = [
   },
   {
     q: "What technology do you use?",
-    a: "Next.js 16, Tailwind CSS 4, deployed to Vercel. Same stack the best startups trust — fast, scalable, and easy to update.",
+    a: "We use the same modern stack trusted by the world's fastest-growing companies. Your site will be fast, secure, and easy to update.",
   },
   {
     q: "Can I update the site myself after launch?",
@@ -253,9 +253,7 @@ export default function Home() {
             className="text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
             style={{ color: "var(--muted)" }}
           >
-            We build fast, beautiful websites for restaurants, startups, and
-            professional firms — designed to convert visitors into clients from
-            day one.
+            We build fast, beautiful websites for restaurants, startups, and professional firms, designed to convert visitors into clients from day one.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
@@ -308,7 +306,7 @@ export default function Home() {
             Work we are proud of
           </h2>
           <p className="text-lg max-w-xl mx-auto" style={{ color: "var(--muted)" }}>
-            Three industries. Three completely different design languages. One standard: exceptional.
+            Three industries. Three completely different design languages. One unwavering standard: results.
           </p>
         </div>
         </ScrollReveal>
